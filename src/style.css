@@ -1,11 +1,24 @@
+/* Global Styling */
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  --color-yellow: #f8dd9f;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-primary: var(--color-yellow);
+  --color-fg: var(--color-black);
+  --color-bg: var(--color-white);
+
+  --font-titles: 'DM Serif Display', serif;
+  --font-sans: "Poppins", sans-serif;
+
+  font-family: var(--font-sans);
+  line-height: 1;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color-scheme: light;
+  color: var(--color-fg);
+  background-color: var(--color-bg);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,84 +26,731 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
+  min-height: 100svh;
   min-width: 320px;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 }
+
+
+main {
+  flex: 1;
+}
+
+
+/* Typography */
+
+p,
+a,
+b,
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-fg);
+}
+
+.inverted {
+
+  p,
+  a,
+  b,
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--color-bg);
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-titles);
+  margin-top: 0;
+  /* margin-bottom: .5em; */
+  margin-bottom: 0;
+}
+
+p {
+  max-width: 840px;
+  line-height: 1.2;
+}
+
+b {
+  font-weight: 700;
+}
+
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 3em;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+h2 {
+  font-size: 3em;
+}
+
+h3 {
+  font-size: 2.5em;
+}
+
+h4 {
+  font-size: 2em;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 4em;
+  }
+
+  h2 {
+    font-size: 4em;
+  }
+
+  h3 {
+    font-size: 3em;
+  }
+
+  h4 {
+    font-size: 2.6em;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 5em;
+  }
+
+  h2 {
+    font-size: 5em;
+  }
+
+  h3 {
+    font-size: 3.5em;
+  }
+
+  h4 {
+    font-size: 2.2em;
+  }
+}
+
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+  transition: color .2s ease;
+}
+
+a:hover {
+  color: var(--color-yellow);
+}
+
+.sub-title {
+  font-size: 1rem;
+
+  b {
+    font-weight: 600;
+  }
+
+  @media (min-width: 640px) {
+    font-size: 1.2rem;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1.3rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 1.4rem;
+  }
+}
+
+/* Layout */
+
+
+/* Layout: Container */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  max-width: 1600px;
+
+  &.container--full-width {
+    padding-right: 0;
+    padding-left: 0;
+    max-width: 100%;
+  }
+}
+
+
+/* Layout: Grid */
+.grid {
+  /* Inspired by pure-css */
+
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+
+
+
+
+  /* Columns */
+  [class*="col-"] {
+    display: inline-block;
+    width: 100%;
+
+
+  }
+
+  @media (min-width: 768px) {
+    .col-1-4 {
+      width: 50%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+
+    .col-1 {
+      width: 100%;
+    }
+
+    .col-1-2 {
+      width: 50%;
+    }
+
+    .col-1-3 {
+      width: 33.3333%;
+    }
+
+    .col-2-3 {
+      width: 66.6666%;
+    }
+
+    .col-1-4 {
+      width: 25%;
+    }
+  }
+
+}
+
+
+/* Layout: Content */
+/* Used within grid columns */
+.content {
+  height: 100%;
+  padding: 0.5em;
+  place-items: start;
+  /* justify-content: center; */
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 640px) {
+    padding: 1em;
+  }
+
+  @media (min-width: 768px) {
+    padding: 2em;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 2em;
+  }
+}
+
+.content-center {
+  /* Annoying helper class here, probably a better way to do it, but I have no more time */
+  justify-content: center;
+}
+
+/* Layout: Block */
+
+.block {
+  padding: 5rem 0;
+
+  @media (min-width: 1024px) {
+
+    padding: 11rem 0;
+  }
+}
+
+.block--full-width {
+  max-width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+
+/* Utility Classes */
+
+.centered {
   text-align: center;
+  place-items: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #3178c6aa);
+.bg-primary {
+  background-color: var(--color-primary);
 }
 
-.card {
-  padding: 2em;
+.bg-image {
+  background-color: var(--color-fg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.read-the-docs {
-  color: #888;
-}
 
-button {
+/* Components */
+
+/* Component: Button */
+.button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
+  padding: 0.8em 1.8em;
+
+  font-size: .9em;
+  font-weight: 600;
   font-family: inherit;
-  background-color: #1a1a1a;
+
+  background-color: var(--color-fg);
+  color: var(--color-bg);
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: all 0.25s ease;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  &:hover {
+
+    border-color: var(--color-fg);
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+
+  &.button--primary {
+    font-size: .8em;
+  }
+
+  @media (min-width: 768px) {}
+
+  @media (min-width: 1024px) {
+
+    font-size: 1em;
+
+    &.button--primary {
+      font-size: 1.1em;
+    }
+  }
+
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+
+.inverted .button {
+
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+
+  &:hover {
+
+    border-color: var(--color-bg);
+    background-color: var(--color-fg);
+    color: var(--color-bg);
   }
-  a:hover {
-    color: #747bff;
+}
+
+
+/* Component: Image */
+.image {
+  position: relative;
+  width: 100%;
+
+  img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+
+/* Component: Header */
+.header {
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+
+  .header__inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    align-items: center;
+  }
+
+  .header__logo {
+    .image {
+      height: 42px;
+      width: 60px;
+    }
+  }
+
+  .mobile-menu {
+    .mobile-menu__burger {
+      cursor: pointer;
+
+      /* width: 34px; */
+
+
+      span {
+        display: block;
+
+        height: 3px;
+        width: 34px;
+
+        border-radius: 4px;
+
+        background-color: var(--color-fg);
+
+        transform-origin: center;
+        transition: 0.2s ease;
+
+        &:nth-child(2) {
+          margin: 8px 0;
+        }
+      }
+    }
+  }
+
+  .menu,
+  .header__cta {
+    display: none;
+  }
+
+  .menu {
+
+    ul {
+      width: 100%;
+      flex-grow: 1;
+      display: flex;
+      list-style: none;
+      padding: 0;
+      justify-content: space-evenly;
+      gap: .6em;
+
+      li {
+        white-space: nowrap;
+
+        a {
+          font-size: .8rem;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+
+    .mobile-menu {
+      display: none;
+    }
+
+    .menu,
+    .header__cta {
+      display: initial;
+    }
+
+    .header__logo {
+      .image {
+        height: 56px;
+        width: 80px;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .menu ul {
+      gap: 1.5em;
+
+      li a {
+        font-size: .85rem;
+      }
+    }
+
+    .header__logo {
+      .image {
+        height: 84px;
+        width: 120px;
+      }
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .menu ul {
+      gap: 2em;
+
+      li a {
+        font-size: 1.05rem;
+      }
+    }
+  }
+
+}
+
+
+/* Component: Footer */
+.footer {
+  background-color: var(--color-fg);
+  padding: 6rem 0;
+
+  font-weight: 500;
+
+  .footer-column__link-list {
+    list-style: none;
+    padding-left: 0;
+    line-height: 1.7;
+  }
+
+  .footer-column__sub-title {
+    margin-bottom: 0.3em;
+  }
+
+  p:last-of-type {
+    margin-top: 0;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 0.5em;
+
+
+    .social-links__link {
+      margin-top: 1em;
+      height: 25px;
+      width: 25px;
+
+      border: 0 solid var(--color-primary);
+      border-radius: 4px;
+      transition: all .2s ease;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+
+      &:hover {
+        padding: 2px;
+        border: 1px solid var(--color-primary);
+      }
+    }
+  }
+}
+
+
+
+
+
+/* ===== BLOCKS ==== */
+
+
+/* Block: Hero */
+.block--hero {
+  background-image: url("/assets/images/topbillede.jpg");
+  padding: 6rem 0;
+
+  @media (min-width: 640px) {
+    padding: 10rem 0;
+  }
+
+  @media (min-width: 768px) {
+    padding: 15rem 0;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 20rem 0;
+  }
+}
+
+
+/* Block: Cases */
+.block--cases {
+
+  [class*="cases--"] {
+    min-height: 20rem;
+
+
+    border: 0 solid var(--color-primary);
+    transition: border 0.2s ease;
+
+    cursor: pointer;
+
+    &:hover {
+      /* padding: 10em; */
+      border: 2rem solid var(--color-primary);
+    }
+  }
+
+  @media (min-width: 768px) {
+    [class*="cases--"] {
+      min-height: 30rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    [class*="cases--"] {
+      min-height: 40rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    [class*="cases--"] {
+      min-height: 50rem;
+    }
+  }
+
+  /* Annoying fix needed because of the way the cases blocks background works */
+  padding: 0;
+
+  .cases--ydelser {
+    background-image: url("/assets/images/ydelser.jpg");
+  }
+
+  .cases--service {
+    background-image: url("/assets/images/service.jpg");
+  }
+
+  .cases--kontaktos {
+    background-image: url("/assets/images/kontaktos.jpg");
+  }
+
+  .cases__title {
+    white-space: nowrap;
+  }
+}
+
+
+/* Block: Text */
+.block--text {
+  .button {
+    margin-top: 1.4em;
+  }
+}
+
+
+/* Block: Text-Image */
+.block--text-image {
+  .image {
+    min-height: 20em;
+
+    @media (min-width: 640px) {
+      min-height: 30em;
+    }
+
+    @media (min-width: 768px) {
+      min-height: 35em;
+    }
+
+    @media (min-width: 1024px) {
+      min-height: 40em;
+    }
+  }
+
+  .button {
+    margin-top: 1.4em;
+  }
+
+  .content {
+    p:last-of-type {
+      margin-top: 0;
+    }
+  }
+}
+
+.block--text-image--right {
+
+  /* I would rather do something with 'order: 1' but this works in this case */
+  .grid {
+    flex-direction: row-reverse;
+  }
+}
+
+
+/* Block: Contact */
+
+.block--contact {
+
+  .content {
+    .sub-title {
+      margin-top: 1.4rem;
+      font-size: 1.4rem;
+
+      b {
+        font-weight: 600;
+      }
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+    }
+  }
+}
+
+.contact-form {
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  gap: 1.2rem;
+}
+
+.form-field {
+
+  position: relative;
+
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  textarea {
+    font-size: 1rem;
+    border: 0;
+    width: 100%;
+    padding: .8em;
+    border-radius: 8px;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+
+  input[type="submit"] {}
+
+  textarea {
+    resize: none;
+  }
+
+  &.form-field--submit {
+    display: flex;
+    justify-content: end;
   }
 }

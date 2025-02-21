@@ -5,124 +5,281 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
   <title>Rooster Fried Chicken</title>
+  <link rel="preconnect" href="https://fonts.bunny.net" />
+  <link href="https://fonts.bunny.net/css?family=dm-serif-display:400|poppins:300,400,500,600,700" rel="stylesheet" />
 </head>
 
 <body>
   <header class="header">
-    <div class="header__logo">
-      <img src="/rooster-logo.png" alt="Rooster Logo">
-    </div>
-    <nav class="menu main-menu">
-      <ul class="menu__list">
-        <li class="menu__list__item">
-          <a href="#">Menupunkt #1</a>
-        </li>
-        <li class="menu__list__item">
-          <a href="#">Menupunkt #2</a>
-        </li>
-        <li class="menu__list__item">
-          <a href="#">Menupunkt #3</a>
-        </li>
-        <li class="menu__list__item">
-          <a href="#">Menupunkt #4</a>
-        </li>
-        <li class="menu__list__item">
-          <a href="#">Menupunkt #5</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="header__cta">
-      <a class="button button--primary" href="#" target="_blank">Book et møde</a>
-    </div>
-  </header>
-
-  <main class="page">
-    <div class="block block--hero">
-      <div>
-        <h1>Making it right entirely in Copenhagen since 1997</h1>
-        <p>Every product embodies our spirit of family legacy, traditional craftmanship</p>
+    <div class="container header__inner">
+      <div class="header__logo">
+        <div class="image">
+          <img src="/assets/brand/rooster-logo.png" alt="Rooster Logo">
+        </div>
       </div>
-    </div>
-    <div class="block block--text"></div>
-    <div class="block block--text-image"></div>
-    <div class="block block--cases"></div>
-    <div class="block block--text-image"></div>
-    <div class="block block--contact"></div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-column">
-      <h3 class="footer-column__title">Find os her</h3>
-      <div class="footer-column__content">
-        <p>
-          Rooster Fried Chicken
-          Firmavej 109
-          2300 Firmaby
-        </p>
-        <p>
-          Tlf.: <a href="tel:004512345678">+45 12 34 56 78</a>
-          Mail: <a href="mailto:info@roosterfried.dk">info@roosterfried.dk</a>
-        </p>
-        <h4>Åbningstider</h4>
-        <p>
-          Mandag - fredag: 10.00 - 17.30
-          Lørdag: 10.00 - 15.00
-        </p>
-
-        <div class="social-links">
-          <a class="social-links__link" href="#" target="_blank"><img src="/facebook-ikon-hvid.png"
-              alt="Facebook Icon"></a>
-          <a class="social-links__link" href="#" target="_blank"><img src="/instagram-ikon-hvid.png"
-              alt="Facebook Icon"></a>
-          <a class="social-links__link" href="#" target="_blank"><img src="/pinterest-ikon-hvid.png"
-              alt="Facebook Icon"></a>
-          <a class="social-links__link" href="#" target="_blank"><img src="/linkedin-ikon-hvid.png"
-              alt="Facebook Icon"></a>
+      <nav class="menu main-menu">
+        <ul class="menu__list">
+          <li class="menu__list__item">
+            <a href="#">Menupunkt #1</a>
+          </li>
+          <li class="menu__list__item">
+            <a href="#">Menupunkt #2</a>
+          </li>
+          <li class="menu__list__item">
+            <a href="#">Menupunkt #3</a>
+          </li>
+          <li class="menu__list__item">
+            <a href="#">Menupunkt #4</a>
+          </li>
+          <li class="menu__list__item">
+            <a href="#">Menupunkt #5</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__cta">
+        <a class="button button--primary" href="#" target="_blank">Book et møde</a>
+      </div>
+      <div class="mobile-menu">
+        <div class="mobile-menu__burger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
     </div>
+  </header>
 
-    <div class="footer-column">
-      <h3 class="footer-column__title">Information</h3>
-      <div class="footer-column__content">
-        <ul class="footer-column__link-list">
-          <li><a href="#">om Rooster</a></li>
-          <li><a href="#">Kataloger & film</a></li>
-          <li><a href="#">Kunde guide</a></li>
-          <li><a href="#">Opskrifter</a></li>
-          <li><a href="#">Presse</a></li>
-          <li><a href="#">Karriere</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-column">
-      <h3 class="footer-column__title">About</h3>
-      <div class="footer-column__content">
-        <ul class="footer-column__link-list">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Refund Policy</a></li>
-          <li><a href="#">Help Center</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-column">
-      <h3 class="footer-column__title">Shop</h3>
-      <div class="footer-column__content">
-        <ul class="footer-column__link-list">
-          <li><a href="#">Juices</a></li>
-          <li><a href="#">Supplements</a></li>
-          <li><a href="#">Pantry</a></li>
-          <li><a href="#">Locations</a></li>
-          <li><a href="#">Order Ahead</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Refund Policy</a></li>
-        </ul>
-      </div>
-    </div>
+  <main id="content">
 
+    <section id="top" class="block block--hero bg-image inverted">
+      <div class="container grid">
+        <div class="col-1">
+          <div class="content">
+            <h1>Making it right entirely in<br>Copenhagen since 1997</h1>
+            <p class="sub-title">Every product embodies our spirit of family legacy, traditional craftmanship, and a
+              genuine commitment to
+              sustainability</p>
+            <a class="button button--primary button--inverted" href="#" target="_blank">Book et møde</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pursuit-of-excellence" class="block block--text bg-primary">
+      <div class="container grid">
+        <div class="col-1">
+          <div class="content centered">
+            <h3>Pursuit of excellence</h3>
+            <p>The idea of "form follows function," a principle associated with the modernist design movement, was the
+              starting place for our Voda collection. Its classic geometry and clean finishes unite into an industrial
+              modern style, crafted for Australian living.</p>
+
+            <a class="button" href="#" target="_blank">Kontakt os</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="modern-refinement" class="block block--text-image">
+      <div class="container grid">
+
+        <div class="col-1-2">
+          <div class="content">
+            <div class="image">
+              <img src="/assets/images/splitsektion-1.jpg" alt="Waves crashing ashore">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-1-2">
+          <div class="content content-center">
+            <h3>Modern refinement</h3>
+            <p>Sammen med vores kunder og den samlede viden fra vores 18.500 arkitekter, ingeniører og øvrige
+              specialister skaber vi løsninger, der adresserer urbanisering, griber digitaliseringens
+              muligheder og gør vores byer og samfund mere bæredygtige.
+            </p>
+            <p>Transforming Society Together</p>
+            <a class="button button--primary" href="#" target="_blank">Kontakt os</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases" class="block block--full-width block--cases">
+      <div class="container container--full-width grid">
+        <div class="col-1-3 cases--ydelser bg-image inverted">
+
+          <div class="content content-center centered">
+            <h2 class="cases__title">Ydelser</h2>
+          </div>
+        </div>
+        <div class="col-1-3 cases--service bg-image inverted">
+          <div class="content content-center centered">
+            <h2 class="cases__title">Service</h2>
+          </div>
+        </div>
+        <div class="col-1-3 cases--kontaktos bg-image inverted">
+          <div class="content content-center centered">
+            <h2 class="cases__title">Kontakt os</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="modern-refinement-2" class="block block--text-image block--text-image--right">
+      <div class="container grid">
+
+        <div class="col-1-2">
+          <div class="content">
+            <div class="image">
+              <img src="/assets/images/splitsektion-2.jpg" alt="A Kingfisher sitting on a branch">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-1-2">
+          <div class="content content-center">
+            <h3>Modern refinement</h3>
+            <p>Sammen med vores kunder og den samlede viden fra vores 18.500 arkitekter, ingeniører og øvrige
+              specialister
+              skaber vi løsninger, der adresserer urbanisering, griber digitaliseringens muligheder og gør vores byer
+              og
+              samfund mere bæredygtige.</p>
+            <p>Transforming Society Together</p>
+            <a class="button" href="#" target="_blank">Kontakt os</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="block block--full-width block--contact bg-primary">
+      <div class="container grid">
+        <div class="col-1-2">
+          <div class="content">
+            <h2>Get in touch</h2>
+            <p class="sub-title">
+              <b>We are awwwards and we are here to serve!</b><br>
+              <b>How can we help you?</b>
+            </p>
+            <p>If you have any questions, please contact us through this form.</p>
+            <p>Please complete the following fields.</p>
+          </div>
+        </div>
+
+        <div class="col-1-2">
+          <div class="content">
+            <form class="contact-form">
+              <div class="contact-form__field form-field">
+                <input id="name" name="name" type="text" placeholder="Dit navn*" />
+              </div>
+              <div class="contact-form__field form-field">
+                <input id="phone" name="phone" type="tel" placeholder="Telefonnummer" />
+              </div>
+              <div class="contact-form__field form-field">
+                <input id="email" name="email" type="email" placeholder="Din email*" />
+              </div>
+              <div class="contact-form__field form-field">
+                <textarea id="message" name="message" rows="3" placeholder="Eventuel besked*"></textarea>
+              </div>
+              <div class="contact-form__field form-field form-field--submit">
+                <input class="button" type="submit" value="Kontakt os" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer inverted">
+    <div class="container grid">
+      <div class="col-1-4 footer-column">
+        <div class="content">
+          <h4 class="footer-column__title">Find os her</h4>
+          <div class="footer-column__content">
+            <p>
+              Rooster Fried Chicken<br>
+              Firmavej 109<br>
+              2300 Firmaby
+            </p>
+            <p>
+              Tlf.: <a href="tel:004512345678">+45 12 34 56 78</a><br>
+              Mail: <a href="mailto:info@roosterfried.dk">info@roosterfried.dk</a>
+            </p>
+            <p class="footer-column__sub-title">
+              <b>Åbningstider</b>
+            </p>
+            <p>
+              Mandag - fredag: 10.00 - 17.30<br>
+              Lørdag: 10.00 - 15.00
+            </p>
+
+            <div class="social-links">
+              <a class="social-links__link" href="#" target="_blank"><img src="/assets/icons/facebook-ikon-hvid.png"
+                  alt="Facebook Icon"></a>
+              <a class="social-links__link" href="#" target="_blank"><img src="/assets/icons/instagram-ikon-hvid.png"
+                  alt="Facebook Icon"></a>
+              <a class="social-links__link" href="#" target="_blank"><img src="/assets/icons/pinterest-ikon-hvid.png"
+                  alt="Facebook Icon"></a>
+              <a class="social-links__link" href="#" target="_blank"><img src="/assets/icons/linkedin-ikon-hvid.png"
+                  alt="Facebook Icon"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-1-4 footer-column">
+        <div class="content">
+          <h4 class="footer-column__title">Information</h4>
+          <div class="footer-column__content">
+            <ul class="footer-column__link-list">
+              <li><a href="#">Om Rooster</a></li>
+              <li><a href="#">Kataloger & film</a></li>
+              <li><a href="#">Kunde guide</a></li>
+              <li><a href="#">Opskrifter</a></li>
+              <li><a href="#">Presse</a></li>
+              <li><a href="#">Karriere</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-1-4 footer-column">
+        <div class="content">
+          <h4 class="footer-column__title">About</h4>
+          <div class="footer-column__content">
+            <ul class="footer-column__link-list">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Refund Policy</a></li>
+              <li><a href="#">Help Center</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-1-4 footer-column">
+        <div class="content">
+          <h4 class="footer-column__title">Shop</h4>
+          <div class="footer-column__content">
+            <ul class="footer-column__link-list">
+              <li><a href="#">Juices</a></li>
+              <li><a href="#">Supplements</a></li>
+              <li><a href="#">Pantry</a></li>
+              <li><a href="#">Locations</a></li>
+              <li><a href="#">Order Ahead</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Refund Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
 
 
