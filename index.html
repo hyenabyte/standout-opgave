@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -12,6 +11,7 @@
   <title>Rooster Fried Chicken</title>
   <link rel="preconnect" href="https://fonts.bunny.net" />
   <link href="https://fonts.bunny.net/css?family=dm-serif-display:400|poppins:300,400,500,600,700" rel="stylesheet" />
+  <link href="/style.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -175,16 +175,16 @@
           <div class="content">
             <form class="contact-form">
               <div class="contact-form__field form-field">
-                <input id="name" name="name" type="text" placeholder="Dit navn*" />
+                <input id="name" name="name" type="text" required placeholder="Dit navn*" />
               </div>
               <div class="contact-form__field form-field">
                 <input id="phone" name="phone" type="tel" placeholder="Telefonnummer" />
               </div>
               <div class="contact-form__field form-field">
-                <input id="email" name="email" type="email" placeholder="Din email*" />
+                <input id="email" name="email" type="email" required placeholder="Din email*" />
               </div>
               <div class="contact-form__field form-field">
-                <textarea id="message" name="message" rows="3" placeholder="Eventuel besked*"></textarea>
+                <textarea id="message" name="message" rows="3" requrired placeholder="Eventuel besked*"></textarea>
               </div>
               <div class="contact-form__field form-field form-field--submit">
                 <input class="button" type="submit" value="Kontakt os" />
@@ -281,11 +281,6 @@
       </div>
     </div>
   </footer>
-
-
-  <div id="app"></div>
-  <script type="module" src="/src/main.ts"></script>
-
 
 </body>
 
